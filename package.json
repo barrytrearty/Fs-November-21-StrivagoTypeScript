@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/barrytrearty/fs-october21-Strivago#readme",
   "dependencies": {
+    "@types/supertest": "^2.0.11",
     "atob": "^2.1.2",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
