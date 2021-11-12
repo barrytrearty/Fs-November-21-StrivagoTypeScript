@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.server = void 0;
+var express_1 = __importDefault(require("express"));
+var cors_1 = __importDefault(require("cors"));
+// import passport from "passport";
+var express_list_endpoints_1 = __importDefault(require("express-list-endpoints"));
+var index_1 = __importDefault(require("./users/index"));
+var index_2 = __importDefault(require("./accomodation/index"));
+var server = (0, express_1.default)();
+exports.server = server;
+// const port = process.env.PORT || 3001;
+server.use((0, cors_1.default)());
+server.use(express_1.default.json());
+server.use("/users", index_1.default);
+server.use("/accomodation", index_2.default);
+console.table((0, express_list_endpoints_1.default)(server));
